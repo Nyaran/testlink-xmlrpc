@@ -5,14 +5,13 @@ testlink-xmlrpc is a NodeJS module that connect with TestLink XML-PRC API in ord
 
 ## Versioning
 
-The versioning is divided in two groups, separated with "-" (hyphen). The first part corresponds to to last tested TestLink version. The second part corresponds to internal version, to control bug fixes, improvements, etc.
+The versioning is divided in two groups, separated with "-" (hyphen). The first part corresponds to last tested TestLink version. The second part corresponds to internal version, to control bug fixes, improvements, etc.
 
 ## Usage
 
 Library is prepared to work with [JS Promises](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise), so you should use them or [Async/Await](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/funcion_asincrona)
 ````javascript
-  const TestLink = require('local_modules/testlink-xmlrpc');
-
+  const TestLink = require('testlink-xmlrpc');
 
   let testlink = new TestLink({
     host: "testlink.my-server.com",
