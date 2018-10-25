@@ -55,4 +55,4 @@ async function createTestCase() {
 ````
 
 ## Disclaimer
-The development of this project is completely separated from TestLink development. So please, before open any issue here o in TestLink issue tracker, make sure you are opening the ticket in the right place.
+The development of this project is completely separated from TestLink development. So please, before open any issue here or in TestLink issue tracker, make sure you are opening the ticket in the right place.
