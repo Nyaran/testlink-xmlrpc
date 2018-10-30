@@ -11,14 +11,14 @@ The versioning is divided in two groups, separated with "-" (hyphen). The first 
 
 Library is prepared to work with [JS Promises](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise), so you should use them or [Async/Await](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/funcion_asincrona)
 ````javascript
-  const TestLink = require('testlink-xmlrpc');
+const TestLink = require('testlink-xmlrpc');
 
-  let testlink = new TestLink({
+let testlink = new TestLink({
     host: "testlink.my-server.com",
     port: 8080, // Set if you are not using default port
     secure: true, // Use https, if you are using http, set to false.
     apiKey: "MY_API_KEY", // The API KEY from TestLink. Get it from user profile.
-  });
+});
 ````
 
 Now you can interact with TestLink server. E.g.:
@@ -56,3 +56,6 @@ async function createTestCase() {
 
 ## Disclaimer
 The development of this project is completely separated from TestLink development. So please, before open any issue here or in TestLink issue tracker, make sure you are opening the ticket in the right place.
+
+## Thanks
+ - [@kengsenghor](https://github.com/kengsenghor) Tests the very first releases and report issues
