@@ -1,6 +1,6 @@
 {
  "name": "testlink-xmlrpc",
- "version": "1.9.18-3",
+ "version": "1.9.18-4",
  "description": "Connect to TestLink using XML-RPC API",
  "main": "index.js",
  "repository": {
