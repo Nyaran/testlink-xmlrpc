@@ -18,4 +18,5 @@
  * @author Luis Zurro de Cos <luiszurrodecos@gmail.com
  */
 
-exports = module.exports = require('./lib/testlink');
+module.exports.TestLink = require('./lib/testlink');
+module.exports.constants = require('./lib/constants');
