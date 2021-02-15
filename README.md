@@ -11,7 +11,7 @@ The versioning is divided in two groups, separated with "-" (hyphen). The first 
 
 Library is prepared to work with [JS Promises](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise), so you should use them or [Async/Await](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/funcion_asincrona)
 ````javascript
-const TestLink = require('testlink-xmlrpc');
+const {TestLink, constants} = require('testlink-xmlrpc');
 
 let testlink = new TestLink({
     host: "testlink.my-server.com",
