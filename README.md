@@ -1,19 +1,20 @@
 # testlink-xmlrpc
- [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
- 
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Test](https://github.com/Nyaran/testlink-xmlrpc/actions/workflows/test.yml/badge.svg?branch=feature%2Ffirst)](https://github.com/Nyaran/testlink-xmlrpc-ts/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/Nyaran/testlink-xmlrpc/branch/main/graph/badge.svg?token=GY6KRLL47I)](https://codecov.io/gh/Nyaran/testlink-xmlrpc-ts)
+![npm](https://img.shields.io/npm/dw/testlink-xmlrpc)
+![testlink](https://img.shields.io/badge/TestLink-1.9.20-blue)
+
 testlink-xmlrpc is a NodeJS module that connect with TestLink XML-PRC API in order to provide methods to handle Test Suites, Test Case and any other internal functionality exposed in the API.
-
-## Versioning
-
-The versioning is divided in two groups, separated with "-" (hyphen). The first part corresponds to last tested TestLink version. The second part corresponds to internal version, to control bug fixes, improvements, etc.
 
 ## Usage
 
-Library is prepared to work with [JS Promises](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise), so you should use them or [Async/Await](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/funcion_asincrona)
-````javascript
-const {TestLink, constants} = require('testlink-xmlrpc');
+Library is prepared to work with [JS Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), so you should use them or [Async/Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+````typescript
+import {TestLink} from 'testlink-xmlrpc';
 
-let testlink = new TestLink({
+const testlink = new TestLink({
     host: "testlink.my-server.com",
     port: 8080, // Set if you are not using default port
     secure: true, // Use https, if you are using http, set to false.
@@ -24,15 +25,16 @@ let testlink = new TestLink({
 Now you can interact with TestLink server. E.g.:
 
 ### Check connection (with async/await)
-````javascript
+````typescript
 async function checkConnection() {
 	let ping = await testlink.sayHello();
-	if (ping === "Hello!")
-		console.log("connection established");
+	if (ping === "Hello!") {
+        console.log("connection established");
+    }
 }
 ````
 ### Validate API KEY (with Promise)
-````javascript
+````typescript
 testlink.checkDevKey({devKey: 'APIKEY_to_check'}).then(reply => {
 	if (reply === true)
 		console.log("API KEY is valid");
@@ -41,9 +43,9 @@ testlink.checkDevKey({devKey: 'APIKEY_to_check'}).then(reply => {
 });
 ````
 ### Create a Test Case (with async/await)
-````javascript
+````typescript
 async function createTestCase() {
-	let testCase = await this.testlink.createTestCase({
+	let testCase = await testlink.createTestCase({
 	     testprojectid: 5, // Project id in TestLink.
 	     testsuiteid: 63, // TestSuite id in TestLink.
 	     testcasename: "This is my new testCase", // Test Case name.
