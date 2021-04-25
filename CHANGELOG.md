@@ -1,5 +1,9 @@
 # [Unreleased]
 
+# [2.0.1] - 2021-04-25
+## Fixed
+ * Fix README badges
+
 # [2.0.0] - 2021-04-25
 ## Added
  * Added a lot of tests.
