@@ -1,8 +1,8 @@
 # testlink-xmlrpc
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Test](https://github.com/Nyaran/testlink-xmlrpc/actions/workflows/test.yml/badge.svg?branch=feature%2Ffirst)](https://github.com/Nyaran/testlink-xmlrpc-ts/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/Nyaran/testlink-xmlrpc/branch/main/graph/badge.svg?token=GY6KRLL47I)](https://codecov.io/gh/Nyaran/testlink-xmlrpc-ts)
+[![Test](https://github.com/Nyaran/testlink-xmlrpc/actions/workflows/test.yml/badge.svg?branch=feature%2Ffirst)](https://github.com/Nyaran/testlink-xmlrpc/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/Nyaran/testlink-xmlrpc/branch/main/graph/badge.svg?token=GY6KRLL47I)](https://codecov.io/gh/Nyaran/testlink-xmlrpc)
 ![npm](https://img.shields.io/npm/dw/testlink-xmlrpc)
 ![testlink](https://img.shields.io/badge/TestLink-1.9.20-blue)
 
@@ -27,8 +27,8 @@ Now you can interact with TestLink server. E.g.:
 ### Check connection (with async/await)
 ````typescript
 async function checkConnection() {
-	let ping = await testlink.sayHello();
-	if (ping === "Hello!") {
+    let ping = await testlink.sayHello();
+    if (ping === "Hello!") {
         console.log("connection established");
     }
 }
@@ -36,28 +36,25 @@ async function checkConnection() {
 ### Validate API KEY (with Promise)
 ````typescript
 testlink.checkDevKey({devKey: 'APIKEY_to_check'}).then(reply => {
-	if (reply === true)
-		console.log("API KEY is valid");
-	else
-		console.log("API KEY is invalid");
+    if (reply === true)
+        console.log("API KEY is valid");
+    else
+        console.log("API KEY is invalid");
 });
 ````
 ### Create a Test Case (with async/await)
 ````typescript
 async function createTestCase() {
-	let testCase = await testlink.createTestCase({
-	     testprojectid: 5, // Project id in TestLink.
-	     testsuiteid: 63, // TestSuite id in TestLink.
-	     testcasename: "This is my new testCase", // Test Case name.
-	     authorlogin: "my_user", // Author of Test Case.
-	     summary: "This Test Case is an example", // Test Case description.
-	     steps: [] // Array containing the Test Case steps.
-	   });
+    let testCase = await testlink.createTestCase({
+        testprojectid: 5, // Project id in TestLink.
+        testsuiteid: 63, // TestSuite id in TestLink.
+        testcasename: "This is my new testCase", // Test Case name.
+        authorlogin: "my_user", // Author of Test Case.
+        summary: "This Test Case is an example", // Test Case description.
+        steps: [] // Array containing the Test Case steps.
+    });
 }
 ````
 
 ## Disclaimer
 The development of this project is completely separated from TestLink development. So please, before open any issue here or in TestLink issue tracker, make sure you are opening the ticket in the right place.
-
-## Thanks
- - [@kengsenghor](https://github.com/kengsenghor) Tests the very first releases and report issues
