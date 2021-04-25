@@ -1,0 +1,9 @@
+.editorconfig
+.eslintignore
+.eslintrc
+.github
+.nyc_output
+.nycrc
+src
+test
+tsconfig.json
