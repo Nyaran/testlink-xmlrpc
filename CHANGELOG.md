@@ -1,4 +1,6 @@
 # [Unreleased]
+
+# [2.0.2] - 2021-05-27
 ## Changed
  * Upgrade ts-node to v10.
  * Move ts-node to devDependencies.
