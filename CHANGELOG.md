@@ -6,14 +6,14 @@
  * Move ts-node to devDependencies.
  * Add links on README badges.
 
-# Fixed
+## Fixed
  * Ignore .idea directory by git.
  * Ignore unnecessary files from package.
- * Fix repository url on package.json
+ * Fix repository url on package.json.
 
 # [2.0.1] - 2021-04-25
 ## Fixed
- * Fix README badges
+ * Fix README badges.
 
 # [2.0.0] - 2021-04-25
 ## Added
