@@ -2,6 +2,7 @@
 ## Changed
  * Upgrade ts-node to v10.
  * Move ts-node to devDependencies.
+ * Add links on README badges.
 
 # Fixed
  * Ignore .idea directory by git.
