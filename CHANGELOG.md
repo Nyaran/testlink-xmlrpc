@@ -1,4 +1,12 @@
 # [Unreleased]
+## Changed
+ * Upgrade ts-node to v10.
+ * Move ts-node to devDependencies.
+
+# Fixed
+ * Ignore .idea directory by git.
+ * Ignore unnecessary files from package.
+ * Fix repository url on package.json
 
 # [2.0.1] - 2021-04-25
 ## Fixed
