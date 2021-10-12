@@ -1,4 +1,7 @@
 # [Unreleased]
+## Changed
+ * Update devDependencies.
+ * Not launch tests on Node 15 as is not maintained.
 
 # [2.0.2] - 2021-05-27
 ## Changed
