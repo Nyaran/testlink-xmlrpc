@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
-    "@pollyjs/adapter-node-http": "^5.1.1",
+    "@pollyjs/adapter-node-http": "^6.0.3",
     "@pollyjs/core": "^5.1.1",
     "@pollyjs/persister-fs": "^5.1.1",
     "@types/chai": "^4.2.22",
