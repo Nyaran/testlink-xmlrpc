@@ -2,7 +2,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Test](https://github.com/Nyaran/testlink-xmlrpc/actions/workflows/test.yml/badge.svg)](https://github.com/Nyaran/testlink-xmlrpc/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/Nyaran/testlink-xmlrpc/branch/master/graph/badge.svg?token=JAAQ2DCW9D)](https://codecov.io/gh/Nyaran/testlink-xmlrpc)
+[![codecov](https://codecov.io/gh/Nyaran/testlink-xmlrpc/branch/main/graph/badge.svg?token=JAAQ2DCW9D)](https://codecov.io/gh/Nyaran/testlink-xmlrpc)
 [![npm](https://img.shields.io/npm/dw/testlink-xmlrpc)](https://www.npmjs.com/package/testlink-xmlrpc)
 [![testlink](https://img.shields.io/badge/TestLink-1.9.20-blue)](https://testlink.org)
 
