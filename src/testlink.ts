@@ -72,7 +72,7 @@ export default class TestLink {
      * Establish connection
      */
     connect(): void {
-        let options = { host: this.host, port: this.port, path: this.rpcPath };
+        const options = { host: this.host, port: this.port, path: this.rpcPath };
         this.rpcClient = this.secure ?
             xmlrpc.createSecureClient(options):
             xmlrpc.createClient(options);
