@@ -49,7 +49,7 @@
     "@istanbuljs/nyc-config-typescript": "1.0.2",
     "@pollyjs/adapter-node-http": "6.0.4",
     "@pollyjs/core": "6.0.5",
-    "@pollyjs/persister-fs": "6.0.4",
+    "@pollyjs/persister-fs": "6.0.5",
     "@types/chai": "4.3.0",
     "@types/chai-as-promised": "7.1.5",
     "@types/mocha": "9.1.0",
