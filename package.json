@@ -53,7 +53,7 @@
     "@types/chai": "4.3.3",
     "@types/chai-as-promised": "7.1.5",
     "@types/mocha": "10.0.0",
-    "@types/pollyjs__adapter-node-http": "2.0.1",
+    "@types/pollyjs__adapter-node-http": "6.0.5",
     "@types/pollyjs__core": "4.3.3",
     "@types/pollyjs__persister-fs": "2.0.1",
     "@types/pollyjs__utils": "2.6.1",
