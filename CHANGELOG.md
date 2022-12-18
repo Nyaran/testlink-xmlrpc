@@ -7,6 +7,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [Unreleased]
  * Check on [changelog folder](changelog).
 
+## [2.0.4] - 2022-12-18
+### Changed
+* Added tests for node 18 and 19.
+* Remove tests for node 17.
+
+### Fix
+* Exports typings properly. Fixes #207
+
 ## [2.0.3] - 2022-02-06
 ### Added
  * Add funding links to package.json
