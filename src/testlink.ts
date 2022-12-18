@@ -31,12 +31,12 @@ import {
 import {MandatoryFields} from './decorators';
 
 export default class TestLink {
-    private rpcClient: xmlrpc.Client | undefined
-    private readonly secure: boolean
-    private readonly host: string
-    private readonly port: number
-    private readonly rpcPath: string
-    private readonly apiKey: string | undefined
+    private rpcClient: xmlrpc.Client | undefined;
+    private readonly secure: boolean;
+    private readonly host: string;
+    private readonly port: number;
+    private readonly rpcPath: string;
+    private readonly apiKey: string | undefined;
 
     /**
      * Class constructor
