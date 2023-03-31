@@ -4,7 +4,7 @@
  *
  * testlink-xmlrpc is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
+ * the Free Software Foundation, either version 3 of the License, orF
  * (at your option) any later version.
  *
  * testlink-xmlrpc is distributed in the hope that it will be useful,
@@ -563,12 +563,16 @@ export default class TestLink {
      * @param options.testprojectname Test project name
      * @param options.platformname New platform name
      * @param options.notes New platform description
+     * @param options.platformondesign boolean value to enable/disable on-design flag
+     * @param options.platformonexecution boolean value to enable/disable on-design flag
      */
     @MandatoryFields(['testprojectname', 'platformname', 'notes'])
     createPlatform(options: ApiTypes.RequestOptions & {
         testprojectname: string
         platformname: string
         notes: string
+        platformondesign?: boolean
+        platformonexecution?: boolean
     }): Promise<ApiTypes.StatusResponse> {
         return this._performRequest('createPlatform', options);
     }
