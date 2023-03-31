@@ -21,6 +21,7 @@ describe('Platforms', () => {
                 testprojectname: 'EditableProject',
                 platformname: 'New Platform',
                 notes: 'Lorem Ipsum dolor sit amet',
+                platformonexecution: true,
             });
             expect(response).to.deep.include({
                 status: 1,
@@ -46,7 +47,7 @@ describe('Platforms', () => {
                 id: '1',
                 name: 'Platform minefield',
                 notes: '<p>Platform to be used on tests</p>',
-                enable_on_design: '1',
+                enable_on_design: '0',
                 enable_on_execution: '1'
             });
         });
