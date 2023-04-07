@@ -5,7 +5,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
- * Check on [changelog folder](changelog).
+* Check on [changelog folder](changelog).
+
+## [2.1.0] - 2023-04-07
+### Added
+* New methods supported:
+    * `getTestCaseRequirements`
+    * `getRequirement`
+    * `createUser`
+    * `setUserRoleOnProject`
+### Changed
+* Add `platformondesign` & `platformonexecution` flag in `createPlatform` helper. ([#258](https://github.com/Nyaran/testlink-xmlrpc/issues/258) thanks [@HedCET](https://github.com/HedCET))
+* Support TestLink 1.9.20_fixed:
+    * Logic:
+        * `updateBuildCustomFieldsValues` The parameter `customfields` now is a map with name as key.
+        * `getReqCoverage` The parameter `requirementdocid` was replaced with `requirementversionid`.
+        * `getTestCaseAttachments`: Added `version` parameter.
+        * `assignTestCaseExecutionTask`: Parameters `platformid` and `platformname` are no longer required.
+    * Tests: Updated and recorded.
+
+### Internal
+* Tweaks on codeql and tests workflows
+* Remove node12 tests
+* Add https://www.buymeacoffee.com/nyaran to funding
+* Tweaks on tsconfig
+* Add workflow to publish package
 
 ## [2.0.4] - 2022-12-18
 ### Changed
@@ -28,7 +52,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
  * Improve packaging discarding `.npmignore` and using `files` property on `package.json`.
 
 ### Fixed
- * Fix connect with https ([#46] thanks [@oghmjos](https://github.com/oghmjos))
+ * Fix connect with https ([#46](https://github.com/Nyaran/testlink-xmlrpc/issues/46) thanks [@oghmjos](https://github.com/oghmjos))
 
 ### Removed
  * Run tests on node 15.
@@ -71,17 +95,17 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
  * Added "thanks" section to README
 
 ### Fixed
- * [#8]
+ * [#8](https://github.com/Nyaran/testlink-xmlrpc/issues/8)
 
 ## [1.9.18-3] - 2018-10-26
 ### Fixed
- * [#4]
- * [#5]
- * [#6]
+ * [#4](https://github.com/Nyaran/testlink-xmlrpc/issues/4)
+ * [#5](https://github.com/Nyaran/testlink-xmlrpc/issues/5)
+ * [#6](https://github.com/Nyaran/testlink-xmlrpc/issues/6)
 
 ## [1.9.18-2] - 2018-10-25
 ### Fixed
- * [#1]
+ * [#1](https://github.com/Nyaran/testlink-xmlrpc/issues/1)
  * Few fixes on README
 
 ## [1.9.18-1] - 2018-09-30
