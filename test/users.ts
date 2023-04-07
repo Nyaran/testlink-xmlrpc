@@ -48,4 +48,22 @@ describe('Users', () => {
             user: TL_CONFIG_TEST.users.Leader.name,
         })).to.be.true;
     });
+
+    it('createUser', async () => {
+        expect(await testlink.createUser({
+            login: 'minefield',
+            firstname: 'Minefield',
+            lastname: 'Foo',
+            email: 'minefield@testlink-xmlrpc.com',
+            password: 'Min3f¡e|d',
+        })).to.be.equal(8);
+    });
+
+    it('setUserRoleOnProject', async () => {
+        expect(await testlink.setUserRoleOnProject({
+            userid: TL_CONFIG_TEST.users.EditableUser.id,
+            testprojectid: 4,
+            rolename: 'Tester',
+        })).to.be.true;
+    });
 });

@@ -22,41 +22,51 @@ sudo systemctl start httpd mariadb
 
 *If your http directory is different, change the variable value*
 
-```bash
+```shell
 TESTLINK_HOMEDIR=/var/www/testlink
 sudo mkdir -p "${TESTLINK_HOMEDIR}"
-wget -c https://downloads.sourceforge.net/project/testlink/TestLink%201.9/TestLink%201.9.20/testlink-1.9.20.tar.gz -O - | sudo tar -xz --strip-components=2 -C "${TESTLINK_HOMEDIR}"
+wget -c https://github.com/TestLinkOpenSourceTRMS/testlink-code/archive/refs/heads/testlink_1_9_20_fixed.zip -O - | sudo tar -xz --strip-components=2 -C "${TESTLINK_HOMEDIR}"
 ```
 
 ### Install testlink
 
-> TODO
+1. Follow the initial setup process.
 
 ## Prepare TestLink for tests:
 
 ### Automatic
-
+#### SQL
 Dump the SQL file `test/db_dump/testlink-20210401T194903Z.sql` to you DB instance.
+```shell
+DB_USER=<YOUR_DB_USER>
+mysql -u "${DB_USER}" -p testlink_void < db_dump/testlink.sql
+```
+#### Attachments
+Copy files to attachments directory
+```shell
+TL_UPLOAD_AREA=<YOUR_TESTLINK_UPLOAD_AREA_PATH>
+TL_UPLOAD_AREA=/var/testlink/upload_area
+mkdir -p "${TL_UPLOAD_AREA}/nodes_hierarchy/6" && cp resources/attachment.png "${_}/2c46dff9581a972995ca0f7194cea408.png"
+mkdir -p "${TL_UPLOAD_AREA}/tcversions/11" && cp resources/attachment.png "${_}/f3f53e0f28edc4f56d0806c2f2a372c6.png"
+```
 
 ### Manual
 
 ### Steps
-
-1. Follow the initial setup process.
-2. Login to TestLink.
-3. Create the initial project: InitialProject (See Projects table).
-4. Create projects (See Projects table).
-5. Set TP:TestableProject as current project
-6. Create users (See Users table).
-7. Create apiKey for admin and Leader.
-8. Create custom fields, and assign all to current project (See Custom Fields table).
-9. Assign all custom fields to EditableProject.
-10. Create issue trackers (See Issue Trackers table).
-11. Create code trackers (See Code Trackers table).
-12. Create keywords (See Keywords table).
-13. Create test suites (See Test Suites table).
-14. Create test cases (See Test Cases table).
-15. Assign steps to tests cases (See Steps table).
+1. Login to TestLink.
+2. Create the initial project: InitialProject (See Projects table).
+3. Create projects (See Projects table).
+4. Set TP:TestableProject as current project
+5. Create users (See Users table).
+6. Create apiKey for admin and Leader.
+7. Create custom fields, and assign all to current project (See Custom Fields table).
+8. Assign all custom fields to EditableProject.
+9. Create issue trackers (See Issue Trackers table).
+10. Create code trackers (See Code Trackers table).
+11. Create keywords (See Keywords table).
+12. Create test suites (See Test Suites table).
+13. Create test cases (See Test Cases table).
+14. Assign steps to tests cases (See Steps table).
 15. Clone TC EP-2 as "Editable TC4 - ReportableA" (to bottom).
 16. Clone TC EP-2 as "Editable TC5 - ReportableB" (to bottom).
 17. Create test plans (See Test Plans table).
@@ -88,6 +98,7 @@ The following tables describes the data to be created on fresh TestLink instance
 | TestDesigner | TestDesigner | Test Designer | Testlink      | testdesigner@testlink-xmlrpc.com | test designer | No          |
 | Tester       | Tester       | Tester        | Testlink      | tester@testlink-xmlrpc.com       | tester        | No          |
 | Guest        | Guest        | Guest         | Testlink      | guest@testlink-xmlrpc.com        | guest         | No          |
+| EditableUser | EditableUser | Editable      | User          | editableuser@testlink-xmlrpc.com | guest         | No          |
 
 #### Custom Fields
 

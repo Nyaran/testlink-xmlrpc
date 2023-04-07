@@ -84,16 +84,55 @@ describe('Requirements', () => {
         });
     });
 
+    it('getRequirement', async () => {
+        const response = await testlink.getRequirement({
+            testprojectid: 4,
+            requirementdocid: 'ReqUC1',
+        });
+        expect(response[0]).to.deep.include({
+            id: '43',
+            srs_id: '40',
+            req_doc_id: 'ReqUC1',
+            scope: '<pre>\r\nTest Case Requirement</pre>',
+            status: 'D',
+            type: '3',
+            active: '1',
+            is_open: '1',
+            reqver_is_open: '1',
+            author_id: '1',
+            version: '1',
+            version_id: '44',
+            expected_coverage: '1',
+            creation_ts: '2021-04-24 21:19:20',
+            modifier_id: '',
+            modification_ts: '2021-04-24 23:19:20',
+            revision: '1',
+            revision_id: '-1',
+            title: 'Requirement 1',
+            testproject_id: '4',
+            req_spec_title: 'Editable Requirement Section',
+            req_spec_doc_id: 'EditReqS',
+            node_order: '1',
+            author: 'admin',
+            modifier: '',
+        });
+    });
+
     it('getReqCoverage', async () => {
         const response = await testlink.getReqCoverage({
             testprojectid: 4,
-            requirementdocid: 'ReqUC1'
+            requirementversionid: 44
         });
         expect(response[0]).to.deep.include({
             id: '10',
-            login: 'admin',
+            tcase_id: '10',
             name: 'Editable TC1',
+            tcase_name: 'Editable TC1',
             tc_external_id: '1',
+            version: '1',
+            tcversion_id: '11',
+            can_be_deleted: '1',
+            is_obsolete: '0',
         });
     });
 });

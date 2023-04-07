@@ -34,5 +34,9 @@ export default {
             id: '6',
             name: 'Guest',
         },
+        EditableUser: {
+            id: '7',
+            name: 'EditableUser',
+        },
     }
 };

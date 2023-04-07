@@ -37,6 +37,7 @@ describe('Projects', () => {
     });
 
     describe('Manage projects', () => {
+        // Needs: https://github.com/TestLinkOpenSourceTRMS/testlink-code/pull/348
         it('createTestProject - Success', async () => {
             const project = await testlink.createTestProject({
                 testprojectname: 'Minefield',

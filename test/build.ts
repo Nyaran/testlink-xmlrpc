@@ -99,12 +99,12 @@ describe('Build', () => {
                 testprojectid: 4,
                 testplanid: 13,
                 customfields: {
-                    1: 'Updated CF',
+                    'CF_Build': 'Updated CF',
                 },
             });
             expect(response[0]).to.deep.include({
                 status: 'ok',
-                msg: 'Custom Field:1 processed ',
+                msg: 'Custom Field:CF_Build processed ',
             });
         });
     });

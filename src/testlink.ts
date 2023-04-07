@@ -350,7 +350,7 @@ export default class TestLink {
         buildid: string | number
         testprojectid: string | number
         testplanid: string | number
-        customfields: Record<number, string>
+        customfields: Record<string, string>
     }): Promise<ApiTypes.StatusMsgResponse[]> {
         return this._performRequest('updateBuildCustomFieldsValues', options);
     }
@@ -728,7 +728,6 @@ export default class TestLink {
      * @param options.testprojectid Project id
      * @param [options.testplanid] Test Plan id
      * @param [options.platformid] Platform id. Mandatory if project has platforms
-     *
      */
     @MandatoryFields(['testprojectid'])
     getRequirements(options: ApiTypes.RequestOptions & {
@@ -740,6 +739,25 @@ export default class TestLink {
     }
 
     /**
+     * Get requirement
+     *
+     * @param options Options
+     * @param options.testprojectid Project id
+     * @param [options.testplanid] Test Plan id
+     * @param [options.platformid] Platform id. Mandatory if project has platforms
+     */
+    @MandatoryFields(['testprojectid', ['requirementid', 'requirementdocid']])
+    getRequirement(options: ApiTypes.RequestOptions & {
+        testprojectid: string | number
+        requirementid?: number
+        requirementdocid?: string
+        version?: string
+        requirementversionid?: string
+    }): Promise<ApiTypes.Requirement[]> {
+        return this._performRequest('getRequirement', options);
+    }
+
+    /**
      * Get requirement coverage. Retrieve the test cases associated to a requirement
      *
      * @param options Options
@@ -747,10 +765,10 @@ export default class TestLink {
      * @param options.requirementdocid Requirement doc id
      *
      */
-    @MandatoryFields(['testprojectid', 'requirementdocid'])
+    @MandatoryFields(['testprojectid', 'requirementversionid'])
     getReqCoverage(options: ApiTypes.RequestOptions & {
         testprojectid: string | number
-        requirementdocid: string | number
+        requirementversionid: number
     }): Promise<ApiTypes.RequirementCoverage[]> {
         return this._performRequest('getReqCoverage', options);
     }
@@ -1067,6 +1085,19 @@ export default class TestLink {
     }
 
     /**
+     * Gets list of requirements for a given Test case version
+     *
+     * @param options Options
+     * @param options.testcaseversionid:
+     */
+    @MandatoryFields(['testcaseversionid'])
+    getTestCaseRequirements(options: ApiTypes.RequestOptions & {
+        testcaseversionid: number
+    }): Promise<ApiTypes.CustomField> {
+        return this._performRequest('getTestCaseRequirements', options);
+    }
+
+    /**
      * Gets attachments for specified test case.
      *
      * @param options Options
@@ -1077,6 +1108,7 @@ export default class TestLink {
     getTestCaseAttachments(options: ApiTypes.RequestOptions & {
         testcaseid?: string
         testcaseexternalid?: string
+        version?: number
     }): Promise<Record<number | string, ApiTypes.Attachment>> {
         return this._performRequest('getTestCaseAttachments', options);
     }
@@ -1197,7 +1229,7 @@ export default class TestLink {
      * @param [options.platformname] Platform name. If not present and Test Case has platforms, platformid must be present.
      * @param options.user User name
      */
-    @MandatoryFields(['testplanid', 'testcaseexternalid', ['buildid', 'buildname'], ['platformid', 'platformname'], 'user'])
+    @MandatoryFields(['testplanid', 'testcaseexternalid', ['buildid', 'buildname'], 'user'])
     assignTestCaseExecutionTask(options: ApiTypes.RequestOptions & {
         testplanid: string | number
         testcaseexternalid: string
@@ -1564,8 +1596,8 @@ export default class TestLink {
      * Update a test suite
      *
      * @param options Options
-     * @param [options.testprojectid] Project id. Madatory if prefix is not present
-     * @param [options.prefix] Project prefix. Madatory if testprojectid is not present
+     * @param [options.testprojectid] Project id. Mandatory if prefix is not present
+     * @param [options.prefix] Project prefix. Mandatory if testprojectid is not present
      * @param options.testsuiteid The ID of the TS to be updated.
      * @param [options.testsuitename] New Test Suite name.
      * @param [options.details] New Test Suite description.
@@ -1612,7 +1644,7 @@ export default class TestLink {
     }
 
     /**
-     * Checks if an user exists
+     * Checks if a user exists
      *
      * @param options.user User name
      */
@@ -1621,6 +1653,43 @@ export default class TestLink {
         user: string
     }): Promise<boolean> {
         return this._performRequest('doesUserExist', options);
+    }
+
+    /**
+     * Create a new user
+     *
+     * @param options.login New user's login name
+     * @param options.firstname New user's first name
+     * @param options.lastname New user's lastname
+     * @param options.email New user's email
+     * @param options.password New user's password
+     */
+    @MandatoryFields(['login', 'firstname', 'lastname', 'email'])
+    createUser(options: ApiTypes.RequestOptions & {
+        login: string
+        firstname: string
+        lastname: string
+        email: string
+        password?: string
+    }): Promise<boolean> {
+        return this._performRequest('createUser', options);
+    }
+
+    /**
+     * Set a role to a user at project level
+     *
+     * @param options
+     * @param options.userid User ID
+     * @param options.rolename Role name
+     * @param options.testprojectid Project id
+     */
+    @MandatoryFields(['userid', 'rolename', 'testprojectid'])
+    setUserRoleOnProject(options: ApiTypes.RequestOptions & {
+        userid: string | number
+        rolename: string
+        testprojectid: string | number
+    }): Promise<boolean> {
+        return this._performRequest('setUserRoleOnProject', options);
     }
 
     /* RPC */
