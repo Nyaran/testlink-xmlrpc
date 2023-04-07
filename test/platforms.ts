@@ -35,7 +35,15 @@ describe('Platforms', () => {
                 testprojectid: 3
             });
             expect(platform).to.deep.include({
-                1: 'Platform minefield'
+                'Platform minefield': {
+                    id: '1',
+                    name: 'Platform minefield',
+                    notes: '<p>Platform to be used on tests</p>',
+                    testproject_id: '3',
+                    enable_on_design: '1',
+                    enable_on_execution: '1',
+                    is_open: '1',
+                }
             });
         });
 
@@ -48,7 +56,8 @@ describe('Platforms', () => {
                 name: 'Platform minefield',
                 notes: '<p>Platform to be used on tests</p>',
                 enable_on_design: '1',
-                enable_on_execution: '1'
+                enable_on_execution: '1',
+                is_open: '1',
             });
         });
     });

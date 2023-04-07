@@ -39,7 +39,7 @@ describe('Test Suites', () => {
                 details: 'Modified details',
                 order: 1,
             });
-            
+
             expect(testSuite).to.deep.include({
                 additionalInfo: '',
                 message: 'ok',
@@ -53,12 +53,12 @@ describe('Test Suites', () => {
                 testprojectid: 3,
                 testsuiteid: 5,
                 customfields: {
-                    6: 'Updated CF value'
+                    'CF_TestSuite': 'Updated CF value'
                 },
             });
 
             response.forEach(r => expect(r).to.deep.include({
-                msg: 'Custom Field:6 processed ',
+                msg: 'Custom Field:CF_TestSuite processed ',
                 status: 'ok',
             }));
         });
@@ -70,7 +70,7 @@ describe('Test Suites', () => {
                 testsuitename: 'Test Suite Minefield',
                 prefix: 'IP',
             });
-            
+
             testSuite.forEach(ts => expect(ts).to.deep.include({
                 name: 'Test Suite Minefield',
                 node_order: '1',
@@ -167,7 +167,7 @@ describe('Test Suites', () => {
             const testSuite = await testlink.getTestSuiteByID({
                 testsuiteid: 6,
             });
-            
+
             expect(testSuite).to.deep.include({
                 details: '',
                 name: 'Test Suite Minefield',

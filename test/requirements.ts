@@ -87,13 +87,18 @@ describe('Requirements', () => {
     it('getReqCoverage', async () => {
         const response = await testlink.getReqCoverage({
             testprojectid: 4,
-            requirementdocid: 'ReqUC1'
+            requirementversionid: 44
         });
         expect(response[0]).to.deep.include({
             id: '10',
-            login: 'admin',
+            tcase_id: '10',
             name: 'Editable TC1',
+            tcase_name: 'Editable TC1',
             tc_external_id: '1',
+            version: '1',
+            tcversion_id: '11',
+            can_be_deleted: '1',
+            is_obsolete: '0',
         });
     });
 });

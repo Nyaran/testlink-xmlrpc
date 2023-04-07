@@ -35,7 +35,7 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "run-s clean compile",
-    "clean": "rimraf ./build",
+    "clean": "rimraf ./build ./nyc_output",
     "compile": "tsc",
     "compile:watch": "tsc --watch",
     "lint": "npm run lint:es",

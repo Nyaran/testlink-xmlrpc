@@ -350,7 +350,7 @@ export default class TestLink {
         buildid: string | number
         testprojectid: string | number
         testplanid: string | number
-        customfields: Record<number, string>
+        customfields: Record<string, string>
     }): Promise<ApiTypes.StatusMsgResponse[]> {
         return this._performRequest('updateBuildCustomFieldsValues', options);
     }
@@ -747,10 +747,10 @@ export default class TestLink {
      * @param options.requirementdocid Requirement doc id
      *
      */
-    @MandatoryFields(['testprojectid', 'requirementdocid'])
+    @MandatoryFields(['testprojectid', 'requirementversionid'])
     getReqCoverage(options: ApiTypes.RequestOptions & {
         testprojectid: string | number
-        requirementdocid: string | number
+        requirementversionid: number
     }): Promise<ApiTypes.RequirementCoverage[]> {
         return this._performRequest('getReqCoverage', options);
     }
@@ -1077,6 +1077,7 @@ export default class TestLink {
     getTestCaseAttachments(options: ApiTypes.RequestOptions & {
         testcaseid?: string
         testcaseexternalid?: string
+        version?: number
     }): Promise<Record<number | string, ApiTypes.Attachment>> {
         return this._performRequest('getTestCaseAttachments', options);
     }
@@ -1197,7 +1198,7 @@ export default class TestLink {
      * @param [options.platformname] Platform name. If not present and Test Case has platforms, platformid must be present.
      * @param options.user User name
      */
-    @MandatoryFields(['testplanid', 'testcaseexternalid', ['buildid', 'buildname'], ['platformid', 'platformname'], 'user'])
+    @MandatoryFields(['testplanid', 'testcaseexternalid', ['buildid', 'buildname'], 'user'])
     assignTestCaseExecutionTask(options: ApiTypes.RequestOptions & {
         testplanid: string | number
         testcaseexternalid: string
