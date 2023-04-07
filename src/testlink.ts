@@ -563,12 +563,16 @@ export default class TestLink {
      * @param options.testprojectname Test project name
      * @param options.platformname New platform name
      * @param options.notes New platform description
+     * @param options.platformondesign boolean value to enable/disable on-design flag
+     * @param options.platformonexecution boolean value to enable/disable on-design flag
      */
     @MandatoryFields(['testprojectname', 'platformname', 'notes'])
     createPlatform(options: ApiTypes.RequestOptions & {
         testprojectname: string
         platformname: string
         notes: string
+        platformondesign?: boolean
+        platformonexecution?: boolean
     }): Promise<ApiTypes.StatusResponse> {
         return this._performRequest('createPlatform', options);
     }
