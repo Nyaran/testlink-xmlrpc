@@ -285,6 +285,7 @@ describe('Test Cases', () => {
             });
         });
 
+        // Needs: https://github.com/TestLinkOpenSourceTRMS/testlink-code/pull/349
         it('setTestCaseExecutionType', async () => {
             const response = await testlink.setTestCaseExecutionType({
                 testcaseexternalid: 'EP-1',
