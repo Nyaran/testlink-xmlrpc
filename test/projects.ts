@@ -39,8 +39,8 @@ describe('Projects', () => {
     describe('Manage projects', () => {
         it('createTestProject - Success', async () => {
             const project = await testlink.createTestProject({
-                testprojectname: 'Minefield2',
-                testcaseprefix: 'MF2',
+                testprojectname: 'Minefield',
+                testcaseprefix: 'MF',
             });
 
             project.forEach(p => expect(p).to.deep.include({
