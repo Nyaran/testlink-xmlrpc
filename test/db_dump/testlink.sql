@@ -311,7 +311,8 @@ INSERT INTO `users` (`id`, `login`, `password`, `role_id`, `email`, `first`, `la
 (3,	'SeniorTester',	'$2y$10$dPXIDchYDgaWVVTjAqrtJeQMbwxVOfxpW.2FERxuTAUXPdk1CQQyq',	6,	'seniortester@testlink-xmlrpc.com',	'Senior Tester',	'Testlink',	'es_ES',	NULL,	1,	NULL,	'1844bf73de5206e108c88f001ad835afcbf5945cb27b4dfe4c680e641b310df0',	'',	'2021-04-17 17:17:28',	NULL),
 (4,	'TestDesigner',	'$2y$10$05L8nAzIxR9FaU78YanrRuT1uTCaKPsGvKB5W2xPkDk.k4XW3cM82',	4,	'testdesigner@testlink-xmlrpc.com',	'Test Designer',	'Testlink',	'es_ES',	NULL,	1,	NULL,	'48d96e63df029d96a7467eb3b4de6273d48fe38de3548a770822d6aa40ab27c8',	'',	'2021-04-17 17:18:06',	NULL),
 (5,	'Tester',	'$2y$10$Kery8v0uYXmmlsrfmYEDgOcNM9xDwXTcXavkm04V6XxuuyTPd6KhG',	7,	'tester@testlink-xmlrpc.com',	'Tester',	'Testlink',	'es_ES',	NULL,	1,	NULL,	'073112624582e9e1a776ec96285f167e62e27de20b83c22c39dd7eb04bcc3d4f',	'',	'2021-04-17 17:18:30',	NULL),
-(6,	'Guest',	'$2y$10$foGhtqGNYl8ozvVyOzCeQ.ZueGfVgB4NEl/WoLobCyqxRrfbUbMJi',	5,	'guest@testlink-xmlrpc.com',	'Guest',	'Testlink',	'es_ES',	NULL,	1,	NULL,	'301a8f27d000c13b40e4a6fb5f30c56059fc1b66a7c8f03ec9acbcb36524e0ba',	'',	'2021-04-17 17:18:53',	NULL);
+(6,	'Guest',	'$2y$10$foGhtqGNYl8ozvVyOzCeQ.ZueGfVgB4NEl/WoLobCyqxRrfbUbMJi',	5,	'guest@testlink-xmlrpc.com',	'Guest',	'Testlink',	'es_ES',	NULL,	1,	NULL,	'301a8f27d000c13b40e4a6fb5f30c56059fc1b66a7c8f03ec9acbcb36524e0ba',	'',	'2021-04-17 17:18:53',	NULL),
+(7,	'EditableUser',	'$2y$10$mjEOGYFhsjX70yDkB5R.LuD9U2l/MBYZScrKkP5Yf0bOcUFwjd//y',	5,	'editableuser@testlink-xmlrpc.com',	'Editable',	'User',	'en_GB',	NULL,	1,	NULL,	'3b36936aac0b2438a7924f5c49dfe0605ecf8e3077b5204d71b4885f111b1e69',	'',	'2023-04-07 17:49:36',	NULL);
 
 TRUNCATE `user_assignments`;
 INSERT INTO `user_assignments` (`id`, `type`, `feature_id`, `user_id`, `build_id`, `deadline_ts`, `assigner_id`, `creation_ts`, `status`) VALUES

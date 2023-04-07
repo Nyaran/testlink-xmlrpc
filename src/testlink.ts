@@ -1596,8 +1596,8 @@ export default class TestLink {
      * Update a test suite
      *
      * @param options Options
-     * @param [options.testprojectid] Project id. Madatory if prefix is not present
-     * @param [options.prefix] Project prefix. Madatory if testprojectid is not present
+     * @param [options.testprojectid] Project id. Mandatory if prefix is not present
+     * @param [options.prefix] Project prefix. Mandatory if testprojectid is not present
      * @param options.testsuiteid The ID of the TS to be updated.
      * @param [options.testsuitename] New Test Suite name.
      * @param [options.details] New Test Suite description.
@@ -1653,6 +1653,43 @@ export default class TestLink {
         user: string
     }): Promise<boolean> {
         return this._performRequest('doesUserExist', options);
+    }
+
+    /**
+     * Create a new user
+     *
+     * @param options.login New user's login name
+     * @param options.firstname New user's first name
+     * @param options.lastname New user's lastname
+     * @param options.email New user's email
+     * @param options.password New user's password
+     */
+    @MandatoryFields(['login', 'firstname', 'lastname', 'email'])
+    createUser(options: ApiTypes.RequestOptions & {
+        login: string
+        firstname: string
+        lastname: string
+        email: string
+        password?: string
+    }): Promise<boolean> {
+        return this._performRequest('createUser', options);
+    }
+
+    /**
+     * Set a role to a user at project level
+     *
+     * @param options
+     * @param options.userid User ID
+     * @param options.rolename Role name
+     * @param options.testprojectid Project id
+     */
+    @MandatoryFields(['userid', 'rolename', 'testprojectid'])
+    setUserRoleOnProject(options: ApiTypes.RequestOptions & {
+        userid: string | number
+        rolename: string
+        testprojectid: string | number
+    }): Promise<boolean> {
+        return this._performRequest('setUserRoleOnProject', options);
     }
 
     /* RPC */

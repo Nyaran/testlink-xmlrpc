@@ -98,6 +98,7 @@ The following tables describes the data to be created on fresh TestLink instance
 | TestDesigner | TestDesigner | Test Designer | Testlink      | testdesigner@testlink-xmlrpc.com | test designer | No          |
 | Tester       | Tester       | Tester        | Testlink      | tester@testlink-xmlrpc.com       | tester        | No          |
 | Guest        | Guest        | Guest         | Testlink      | guest@testlink-xmlrpc.com        | guest         | No          |
+| EditableUser | EditableUser | Editable      | User          | editableuser@testlink-xmlrpc.com | guest         | No          |
 
 #### Custom Fields
 

@@ -2,6 +2,8 @@
 * New methods supported:
   * `getTestCaseRequirements`
   * `getRequirement`
+  * `createUser`
+  * `setUserRoleOnProject`
 
 ### Changed
 * Support TestLink 1.9.20_fixed:
