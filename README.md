@@ -4,7 +4,7 @@
 [![Test](https://github.com/Nyaran/testlink-xmlrpc/actions/workflows/test.yml/badge.svg)](https://github.com/Nyaran/testlink-xmlrpc/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/Nyaran/testlink-xmlrpc/branch/main/graph/badge.svg?token=JAAQ2DCW9D)](https://codecov.io/gh/Nyaran/testlink-xmlrpc)
 [![npm](https://img.shields.io/npm/dw/testlink-xmlrpc)](https://www.npmjs.com/package/testlink-xmlrpc)
-[![testlink](https://img.shields.io/badge/TestLink-1.9.20_testlink-blue)](https://github.com/TestLinkOpenSourceTRMS/testlink-code/tree/testlink_1_9_20_fixed)
+[![testlink](https://img.shields.io/badge/TestLink-1.9.20__fixed-blue)](https://github.com/TestLinkOpenSourceTRMS/testlink-code/tree/testlink_1_9_20_fixed)
 
 [![ko-fi](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://ko-fi.com/nyaran)
 
