@@ -728,7 +728,6 @@ export default class TestLink {
      * @param options.testprojectid Project id
      * @param [options.testplanid] Test Plan id
      * @param [options.platformid] Platform id. Mandatory if project has platforms
-     *
      */
     @MandatoryFields(['testprojectid'])
     getRequirements(options: ApiTypes.RequestOptions & {
@@ -737,6 +736,25 @@ export default class TestLink {
         platformid?: string | number
     }): Promise<ApiTypes.Requirement[]> {
         return this._performRequest('getRequirements', options);
+    }
+
+    /**
+     * Get requirement
+     *
+     * @param options Options
+     * @param options.testprojectid Project id
+     * @param [options.testplanid] Test Plan id
+     * @param [options.platformid] Platform id. Mandatory if project has platforms
+     */
+    @MandatoryFields(['testprojectid', ['requirementid', 'requirementdocid']])
+    getRequirement(options: ApiTypes.RequestOptions & {
+        testprojectid: string | number
+        requirementid?: number
+        requirementdocid?: string
+        version?: string
+        requirementversionid?: string
+    }): Promise<ApiTypes.Requirement[]> {
+        return this._performRequest('getRequirement', options);
     }
 
     /**
@@ -1064,6 +1082,19 @@ export default class TestLink {
         linkid: number
     }): Promise<ApiTypes.CustomField> {
         return this._performRequest('getTestCaseCustomFieldTestPlanDesignValue', options);
+    }
+
+    /**
+     * Gets list of requirements for a given Test case version
+     *
+     * @param options Options
+     * @param options.testcaseversionid:
+     */
+    @MandatoryFields(['testcaseversionid'])
+    getTestCaseRequirements(options: ApiTypes.RequestOptions & {
+        testcaseversionid: number
+    }): Promise<ApiTypes.CustomField> {
+        return this._performRequest('getTestCaseRequirements', options);
     }
 
     /**
@@ -1613,7 +1644,7 @@ export default class TestLink {
     }
 
     /**
-     * Checks if an user exists
+     * Checks if a user exists
      *
      * @param options.user User name
      */

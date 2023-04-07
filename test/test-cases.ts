@@ -195,6 +195,24 @@ describe('Test Cases', () => {
             });
         });
 
+        it('getTestCaseRequirements', async () => {
+            const response = await testlink.getTestCaseRequirements({
+                testcaseversionid: 11,
+            });
+            expect(response).to.deep.include({
+                id: '43',
+                req_id: '43',
+                req_doc_id: 'ReqUC1',
+                title: 'Requirement 1',
+                is_active: '1',
+                testcase_id: '10',
+                tcversion_id: '11',
+                req_spec_title: 'Editable Requirement Section',
+                req_version_id: '44',
+                version: '1',
+            });
+        });
+
         it('getTestCase', async () => {
             const testCase = await testlink.getTestCase({
                 testcaseexternalid: 'TP-1'
@@ -282,7 +300,6 @@ describe('Test Cases', () => {
                 testcaseid: 10
             });
         });
-
 
         it('assignTestCaseExecutionTask', async () => {
             const response = await testlink.assignTestCaseExecutionTask({

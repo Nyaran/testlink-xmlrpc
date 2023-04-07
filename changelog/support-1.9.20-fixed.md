@@ -1,3 +1,8 @@
+### Added
+* New methods supported:
+  * `getTestCaseRequirements`
+  * `getRequirement`
+
 ### Changed
 * Support TestLink 1.9.20_fixed:
   * Logic:
