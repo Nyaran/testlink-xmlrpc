@@ -21,6 +21,7 @@ describe('Platforms', () => {
                 testprojectname: 'EditableProject',
                 platformname: 'New Platform',
                 notes: 'Lorem Ipsum dolor sit amet',
+                platformondesign: true,
                 platformonexecution: true,
             });
             expect(response).to.deep.include({
