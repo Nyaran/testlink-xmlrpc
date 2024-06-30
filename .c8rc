@@ -1,0 +1,14 @@
+{
+  "all": true,
+  "include": [
+	"src/**"
+  ],
+  "exclude": [
+	"src/types/**"
+  ],
+  "report-dir": "./coverage",
+  "reporter": [
+	"text",
+	"lcov"
+  ]
+}

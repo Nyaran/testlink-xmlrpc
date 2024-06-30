@@ -21,16 +21,16 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-        node-version: [14, 16, 18, 20]
+        node-version: [18, 20, 22]
         architecture:
           - x64
     name: Node ${{ matrix.node-version }} - ${{ matrix.architecture }} on ${{ matrix.os }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.1.7
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ matrix.node-version }}
           architecture: ${{ matrix.architecture }}
@@ -43,12 +43,9 @@ jobs:
       - name: Run the tests
         run: npm test
 
-      # Run Coverage
-      - name: Ensure coverage folder exists
-        run: mkdir -p coverage
-      - name: Generate coverage report
-        run: npx nyc report --reporter=json > coverage/coverage.json
-
-      - uses: codecov/codecov-action@v3
+      # Report Coverage
+      - name: Report coverage
+        uses: codecov/codecov-action@v4.5.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./coverage/
