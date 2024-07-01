@@ -1,6 +1,6 @@
 {
 	"name": "testlink-xmlrpc",
-	"version": "3.0.0-alpha.0",
+	"version": "3.0.0-beta.0",
 	"description": "Connect to TestLink using XML-RPC API",
 	"author": "Luis Zurro <luiszurrodecos@gmail.com> (https://pistachitos.com)",
 	"homepage": "https://github.com/Nyaran/testlink-xmlrpc#readme",
