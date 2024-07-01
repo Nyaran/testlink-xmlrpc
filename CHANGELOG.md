@@ -5,24 +5,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-* Check on [changelog folder](changelog).
+### 💥 Breaking Change
+* This package is now pure ESM. Please [read this](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
+* Drop Node 14 and 16 support.
+
+### 🏠 Internal
+* Update eslint config to use flat config.
+* Update eslint to v9.
+* Add restrictive Code Style with eslint.
+* Replace [istanbuljs/nyc](https://github.com/istanbuljs/nyc) with [c8](https://github.com/bcoe/c8).
+* Improve linting
+* Fix some non-working tests
 
 ## [2.1.0] - 2023-04-07
 ### Added
 * New methods supported:
-    * `getTestCaseRequirements`
-    * `getRequirement`
-    * `createUser`
-    * `setUserRoleOnProject`
+	* `getTestCaseRequirements`
+	* `getRequirement`
+	* `createUser`
+	* `setUserRoleOnProject`
 ### Changed
 * Add `platformondesign` & `platformonexecution` flag in `createPlatform` helper. ([#258](https://github.com/Nyaran/testlink-xmlrpc/issues/258) thanks [@HedCET](https://github.com/HedCET))
 * Support TestLink 1.9.20_fixed:
-    * Logic:
-        * `updateBuildCustomFieldsValues` The parameter `customfields` now is a map with name as key.
-        * `getReqCoverage` The parameter `requirementdocid` was replaced with `requirementversionid`.
-        * `getTestCaseAttachments`: Added `version` parameter.
-        * `assignTestCaseExecutionTask`: Parameters `platformid` and `platformname` are no longer required.
-    * Tests: Updated and recorded.
+	* Logic:
+		* `updateBuildCustomFieldsValues` The parameter `customfields` now is a map with name as key.
+		* `getReqCoverage` The parameter `requirementdocid` was replaced with `requirementversionid`.
+		* `getTestCaseAttachments`: Added `version` parameter.
+		* `assignTestCaseExecutionTask`: Parameters `platformid` and `platformname` are no longer required.
+	* Tests: Updated and recorded.
 
 ### Internal
 * Tweaks on codeql and tests workflows

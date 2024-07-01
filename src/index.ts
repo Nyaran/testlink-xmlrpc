@@ -1,2 +1,2 @@
-export {default as TestLink} from './testlink';
-export * as Constants from './constants';
+export {default as TestLink} from './testlink.js';
+export * as Constants from './constants.js';

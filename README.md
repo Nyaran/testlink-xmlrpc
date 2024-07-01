@@ -17,10 +17,10 @@ Library is prepared to work with [JS Promises](https://developer.mozilla.org/en-
 import {TestLink} from 'testlink-xmlrpc';
 
 const testlink = new TestLink({
-    host: "testlink.my-server.com",
-    port: 8080, // Set if you are not using default port
-    secure: true, // Use https, if you are using http, set to false.
-    apiKey: "MY_API_KEY", // The API KEY from TestLink. Get it from user profile.
+	host: "testlink.my-server.com",
+	port: 8080, // Set if you are not using default port
+	secure: true, // Use https, if you are using http, set to false.
+	apiKey: "MY_API_KEY", // The API KEY from TestLink. Get it from user profile.
 });
 ````
 
@@ -29,32 +29,32 @@ Now you can interact with TestLink server. E.g.:
 ### Check connection (with async/await)
 ````typescript
 async function checkConnection() {
-    let ping = await testlink.sayHello();
-    if (ping === "Hello!") {
-        console.log("connection established");
-    }
+	let ping = await testlink.sayHello();
+	if (ping === "Hello!") {
+		console.log("connection established");
+	}
 }
 ````
 ### Validate API KEY (with Promise)
 ````typescript
 testlink.checkDevKey({devKey: 'APIKEY_to_check'}).then(reply => {
-    if (reply === true)
-        console.log("API KEY is valid");
-    else
-        console.log("API KEY is invalid");
+	if (reply === true)
+		console.log("API KEY is valid");
+	else
+		console.log("API KEY is invalid");
 });
 ````
 ### Create a Test Case (with async/await)
 ````typescript
 async function createTestCase() {
-    let testCase = await testlink.createTestCase({
-        testprojectid: 5, // Project id in TestLink.
-        testsuiteid: 63, // TestSuite id in TestLink.
-        testcasename: "This is my new testCase", // Test Case name.
-        authorlogin: "my_user", // Author of Test Case.
-        summary: "This Test Case is an example", // Test Case description.
-        steps: [] // Array containing the Test Case steps.
-    });
+	let testCase = await testlink.createTestCase({
+		testprojectid: 5, // Project id in TestLink.
+		testsuiteid: 63, // TestSuite id in TestLink.
+		testcasename: "This is my new testCase", // Test Case name.
+		authorlogin: "my_user", // Author of Test Case.
+		summary: "This Test Case is an example", // Test Case description.
+		steps: [] // Array containing the Test Case steps.
+	});
 }
 ````
 
