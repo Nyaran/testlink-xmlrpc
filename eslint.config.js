@@ -90,6 +90,8 @@ export default tseslint.config(
 			}],
 			'@typescript-eslint/prefer-nullish-coalescing': 'off', // requires strictNullChecks
 			'@typescript-eslint/no-unnecessary-condition': 'off', // requires strictNullChecks
+			'@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off', // requires strictNullChecks
+
 			"@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_$" }],
 			"@typescript-eslint/no-unsafe-assignment": 'off',
 
