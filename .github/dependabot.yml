@@ -16,3 +16,30 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+    groups:
+      chai:
+        patterns:
+          - "@types/chai"
+          - "chai"
+          - "chai-*"
+      eslint:
+        patterns:
+          - "@eslint/*"
+          - "eslint"
+          - "eslint-*"
+          - "typescript-eslint"
+      mocha:
+        patterns:
+          - "@types/mocha"
+          - "mocha"
+      xmlrpc:
+        patterns:
+          - "@types/xmlrpc"
+          - "xmlrpc"
+      pollyjs:
+        patterns:
+          - "@pollyjs/*"
+      typescript:
+        patterns:
+          - "typescript"
+          - "ts-node"
