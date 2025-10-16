@@ -1,6 +1,4 @@
 name: Publish Release
-permissions:
-  contents: read
 
 on:
   release:
@@ -8,16 +6,23 @@ on:
 
 jobs:
   publish:
+    permissions:
+      id-token: write
+      contents: read
+    environment:
+      name: npmjs
+      url: https://www.npmjs.com/package/gplint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5.0.0
       - uses: actions/setup-node@v6.0.0
         with:
-          node-version: 18
+          node-version: 20
           registry-url: https://registry.npmjs.org/
+      # Ensure npm 11.5.1 or later is installed
+      - name: Update npm
+        run: npm install -g npm@latest
       - run: npm i
       - run: npm test
       - run: npm run build
       - run: npm publish --tag=$(node -p "require('./package.json').version.match(/[0-9]+\.[0-9]+\.[0-9]+(-(.+)\.[0-9]+)?/)[2] || 'latest'")
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

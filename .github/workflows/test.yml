@@ -23,7 +23,7 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-        node-version: [18, 20, 22, 24]
+        node-version: [20, 22, 24, 25]
         architecture:
           - x64
     name: Node ${{ matrix.node-version }} - ${{ matrix.architecture }} on ${{ matrix.os }}
