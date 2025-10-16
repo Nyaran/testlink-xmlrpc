@@ -1,6 +1,4 @@
 name: Test
-permissions:
-  contents: read
 
 # Controls when the action will run.
 on:
@@ -16,6 +14,8 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    permissions:
+      contents: read
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
     strategy:
@@ -46,8 +46,17 @@ jobs:
         run: npm test
 
       # Report Coverage
-      - name: Report coverage
-        uses: codecov/codecov-action@v5.5.1
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          directory: ./coverage/
+          flags: ${{ matrix.os }}_${{ matrix.architecture }}_node${{ matrix.node-version }},unit
+          directory: ./reports/coverage/
+
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: ${{ matrix.os }}_${{ matrix.architecture }}_node${{ matrix.node-version }},unit
+          file: ./reports/junit.xml
